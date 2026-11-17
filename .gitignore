@@ -1,0 +1,10 @@
+node_modules/
+out/
+dist/
+release/
+resources/bin/
+*.tsbuildinfo
+.env
+.env.*
+*.log
+.DS_Store

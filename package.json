@@ -1,0 +1,40 @@
+{
+  "name": "cozy-spotify",
+  "version": "0.1.0",
+  "description": "A cozy, modern desktop shell for playing Spotify",
+  "main": "./out/main/index.js",
+  "author": "sershoks",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "electron-vite dev",
+    "build": "electron-vite build",
+    "typecheck": "tsc --noEmit -p tsconfig.node.json && tsc --noEmit -p tsconfig.web.json",
+    "postinstall": "node scripts/fetch-librespot.mjs",
+    "fetch:librespot": "node scripts/fetch-librespot.mjs",
+    "fetch:librespot:all": "node scripts/fetch-librespot.mjs --all",
+    "build:win": "node scripts/fetch-librespot.mjs --platform win32 --arch x64 && npm run build && electron-builder --win",
+    "build:linux": "node scripts/fetch-librespot.mjs --platform linux --arch x64 && npm run build && electron-builder --linux",
+    "start": "electron-vite preview"
+  },
+  "dependencies": {
+    "framer-motion": "^13.2.0",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@types/ws": "^8.5.13",
+    "@vitejs/plugin-react": "^4.3.4",
+    "electron": "^33.2.0",
+    "electron-builder": "^25.1.8",
+    "electron-vite": "^2.3.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.28.0",
+    "tar": "^7.4.3",
+    "typescript": "^5.7.2",
+    "vite": "^5.4.11"
+  }
+}
